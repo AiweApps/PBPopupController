@@ -663,14 +663,15 @@ extension PBPopupPresentationController
         
         var frame = CGRect(x: x, y: y, width: width, height: height)
         
-        if self.presentingVC is UINavigationController || self.presentingVC is UITabBarController {
-            frame = CGRect(x: 0.0, y: y, width: containerView.bounds.width, height: height - y)
+        //fix custom presentation content view height
+//         if self.presentingVC is UINavigationController || self.presentingVC is UITabBarController {
+//             frame = CGRect(x: 0.0, y: y, width: containerView.bounds.width, height: height - y)
             
-            if #available(iOS 14, *), UIDevice.current.userInterfaceIdiom == .pad, let svc = self.presentingVC.splitViewController, self.dropShadowViewFor(svc.view) != nil {
-                let x = self.presentingVC.view.safeAreaInsets.left
-                frame = CGRect(x: x, y: y, width: containerView.bounds.width - x, height: height - y)
-            }
-        }
+//             if #available(iOS 14, *), UIDevice.current.userInterfaceIdiom == .pad, let svc = self.presentingVC.splitViewController, self.dropShadowViewFor(svc.view) != nil {
+//                 let x = self.presentingVC.view.safeAreaInsets.left
+//                 frame = CGRect(x: x, y: y, width: containerView.bounds.width - x, height: height - y)
+//             }
+//         }
         PBLog("\(frame)")
         return frame
     }
@@ -786,7 +787,7 @@ extension PBPopupPresentationController
     
     private func setupBackingView()
     {
-        if self.popupPresentationStyle == .custom { return }
+//         if self.popupPresentationStyle == .custom { return }
         
         if self.presentingVC.splitViewController != nil { return }
         
@@ -836,6 +837,7 @@ extension PBPopupPresentationController
             self.setupCornerRadiusForBackingViewAnimated(false, open: false)
             
             self.dimmerView.frame = self.backingView.bounds
+            self.dimmerView.alpha = 0.3
             self.backingView.addSubview(self.dimmerView)
             
             if self.blackView.window == nil {
