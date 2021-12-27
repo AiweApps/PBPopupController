@@ -396,7 +396,7 @@ extension PBPopupPresentationController: UIViewControllerAnimatedTransitioning
             self.popupBarView.alpha = 0.0
             
             let animations = {
-                self.blackView.alpha = 1
+                self.blackView.alpha = 0
                 self.popupContentView.center = self.popupContentViewCenterForPopupStateClosed(false)
                 self.popupContentView.bounds = self.popupContentViewBoundsForPopupStateClosed(false)
                 presentedView?.center = self.presentedViewCenterForPopupStateClosed()
