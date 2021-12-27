@@ -239,8 +239,9 @@ internal class PBPopupPresentationController: UIPresentationController {
             self.configureImageViewInStartPosition()
         }
         
-        self.backingView?.removeFromSuperview()
-        self.backingView = nil
+//         INFO: fix dismiss animation
+//         self.backingView?.removeFromSuperview()
+//         self.backingView = nil
         self.setupBackingView()
         self.animateBackingViewToDeck(true, animated: false)
         
