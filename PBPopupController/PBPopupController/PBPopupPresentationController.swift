@@ -78,7 +78,7 @@ internal class PBPopupPresentationController: UIPresentationController {
         let view = UIView()
         view.autoresizingMask = []
         view.backgroundColor = UIColor.black
-        view.alpha = 1.0
+        view.alpha = 0.0
         return view
     }()
     
@@ -357,7 +357,8 @@ extension PBPopupPresentationController: UIViewControllerAnimatedTransitioning
                 self._animateBottomBarToHidden(true)
                 
                 self.setupCornerRadiusForPopupContentViewAnimated(true, open: true)
-                
+                self.blackView.alpha = 1
+
                 if !transitionContext.isInteractive {
                     self.popupContentView.popupCloseButton?.alpha = 1.0
                 }
@@ -394,6 +395,7 @@ extension PBPopupPresentationController: UIViewControllerAnimatedTransitioning
             self.popupBarView.alpha = 0.0
             
             let animations = {
+                self.blackView.alpha = 1
                 self.popupContentView.center = self.popupContentViewCenterForPopupStateClosed(false)
                 self.popupContentView.bounds = self.popupContentViewBoundsForPopupStateClosed(false)
                 presentedView?.center = self.presentedViewCenterForPopupStateClosed()
