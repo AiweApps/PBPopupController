@@ -709,14 +709,14 @@ internal let PBPopupBarImageHeightCompact: CGFloat = 40.0
     private var askForLabels: Bool = false
     
     // The label containing the title text
-    internal var titleLabel: UILabel!
+    public var titleLabel: UILabel!
     
     private var titleLabelCenterConstraint: NSLayoutConstraint!
     private var titleLabelTopConstraint: NSLayoutConstraint!
     private var titleLabelHeightConstraint: NSLayoutConstraint!
     
     // The label containing the subtitle text
-    internal var subtitleLabel: UILabel!
+    public var subtitleLabel: UILabel!
     
     private var subtitleLabelCenterConstraint: NSLayoutConstraint!
     private var subtitleLabelBottomConstraint: NSLayoutConstraint!
