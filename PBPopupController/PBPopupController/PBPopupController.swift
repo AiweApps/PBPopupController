@@ -740,7 +740,7 @@ extension PBPopupPresentationStyle
         }
     }
     
-    internal func _closePopupAnimated(_ animated: Bool, completionBlock: (() -> Swift.Void)? = nil) {
+    public func _closePopupAnimated(_ animated: Bool, completionBlock: (() -> Swift.Void)? = nil) {
         guard let vc = self.containerViewController else {
             completionBlock?()
             return
