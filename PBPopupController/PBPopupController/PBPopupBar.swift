@@ -723,7 +723,7 @@ internal let PBPopupBarImageHeightCompact: CGFloat = 40.0
     private var subtitleLabelHeightConstraint: NSLayoutConstraint!
     
     // The progress view (see PBPopupBarProgressViewStyle and progress property)
-    @objc dynamic private var progressView: PBPopupBarProgressView!
+    @objc dynamic public var progressView: PBPopupBarProgressView!
     
     private var progressViewVerticalConstraints: [NSLayoutConstraint]!
     private var progressViewHorizontalConstraints: [NSLayoutConstraint]!
@@ -1566,7 +1566,7 @@ extension PBPopupBar
         }
     }
     
-    internal class PBPopupBarProgressView: UIProgressView {
+    public class PBPopupBarProgressView: UIProgressView {
         override init(frame: CGRect) {
             super.init(frame: frame)
         }
