@@ -859,6 +859,7 @@ internal let PBPopupBarImageHeightCompact: CGFloat = 40.0
         
         self.progressView = PBPopupBarProgressView(progressViewStyle: .default)
         self.progressView.trackImage = UIImage()
+        self.progressView.progressTintColor = .systemPink
         
         self.toolbar.addSubview(self.progressView)
         
